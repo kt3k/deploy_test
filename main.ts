@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 
-const kv = Deno.openKv();
+const kv = await Deno.openKv();
 
 serve(async (req: Request) => {
   const params = new URLSearchParams(new URL(req.url).search);
